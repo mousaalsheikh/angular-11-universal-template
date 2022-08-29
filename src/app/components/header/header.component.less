@@ -1,0 +1,133 @@
+.top-header {
+    background-color: var(--gray-color);
+    height: 40px;
+    overflow: hidden;
+    line-height: 40px;
+
+    .top-header-wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        border-left: var(--header-border-left);
+    }
+    
+    
+    h1.website-title {
+        color: #f3f3f3;
+        font-weight: 300;
+        font-size: 16px;
+        margin: 0;
+        line-height: 40px;
+    }  
+    
+    .top-header-items {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+    }
+    
+    .top-header-items a {
+        color: #f3f3f3;
+        border-left: var(--header-border-left);
+        border-right: var(--header-border-right);
+        line-height:36px;
+        display: inline-block;
+        padding: 0 10px;
+    }
+    
+    .top-header-items a i {
+        line-height: 40px;
+        display: inline-block;
+    }
+    
+    a.social-link {
+        font-size: 18px;
+    }
+    
+    a.social-link i{
+        position: relative;
+        top:-1px;
+    }
+    
+    &.dir-ar a.phone-call{
+          border-right: solid 1px var(--line-color);
+    }
+    
+    &.dir-en a.phone-call{
+          border-left: solid 1px var(--line-color);
+    }
+    
+    
+    a.phone-call{
+         position: relative;
+        top:-2px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .top-header h1.website-title {
+        display: none;
+    }
+
+     .top-header.dir-ar a.phone-call{
+        border-right: none !important;
+        padding-right: 0 !important;
+    }
+    
+    .top-header.dir-ar a.lang-link{
+        margin-right:auto;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+     .top-header.dir-en a.lang-link{
+        margin-left:auto;
+        border: none !important;
+        padding: 0 !important;
+    }
+    
+    
+    .top-header .top-header-wrapper{
+        border: none !important;
+    }
+}
+
+@media screen and (max-width:450px){
+    .top-header h1.website-title {
+        display: none;
+    }
+
+    .top-header a.phone-call {
+        display: none !important;
+    }
+}
+
+header{
+    .header-wrapper {
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    a.logo {
+        width: 210px;
+    }
+    
+    .web-menu a {
+        background-color: #fff;
+        font-size: 1.05em;
+        color: var(--gray-color);
+        padding: 12px 15px 10px;
+        border-radius: 5px;
+        display: inline-block;
+        line-height: 1;
+        text-decoration:none;
+        transition:all 300ms;
+    }
+    
+    .web-menu a.active, .web-menu a:hover {
+        background-color: var(--accent-color);
+        color: #fff;
+    }
+}

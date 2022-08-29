@@ -1,0 +1,122 @@
+@import url('assets/fonts/fontawesome-pro/css/all.min.css');
+@import url('assets/fonts/font/font.css');
+:root {
+  --font-family: "tajwal";
+  --primary-color: #002d64;
+  --accent-color: #137daf;
+  --gray-color: #727290;
+  --green-color: #c8cf2c;
+  --color: #727290;
+  --text-color: #727290;
+  --doctor-color: #f9f8fc;
+  --line-color: #9292ab;
+}
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  font-family: var(--font-family);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--gray-color);
+  font-weight: 300;
+}
+* {
+  outline: none !important;
+  -webkit-overflow-scrolling: touch;
+}
+img {
+  max-width: 100%;
+}
+.ssr-not-loaded {
+  display: none !important;
+}
+a {
+  color: var(--accent-color);
+}
+.site.site-lang-ar {
+  --header-border-left: solid 1px var(--line-color);
+  --header-border-right: none;
+  direction: rtl;
+  text-align: right;
+}
+.site.site-lang-ar i + span {
+  margin-right: 5px;
+}
+.site.site-lang-ar .m-l-auto {
+  margin-left: auto;
+}
+.site.site-lang-ar .m-r-auto {
+  margin-right: auto;
+}
+.site.site-lang-ar .m-l-3 {
+  margin-left: 3px;
+}
+.site.site-lang-ar .m-l-5 {
+  margin-left: 5px;
+}
+.site.site-lang-ar .m-l-10 {
+  margin-left: 10px;
+}
+.site.site-lang-ar .m-l-15 {
+  margin-left: 15px;
+}
+.site.site-lang-ar .m-l-20 {
+  margin-left: 20px;
+}
+.site.site-lang-ar .m-r-3 {
+  margin-right: 3px;
+}
+.site.site-lang-ar .m-r-5 {
+  margin-right: 5px;
+}
+.site.site-lang-ar .m-r-10 {
+  margin-right: 10px;
+}
+.site.site-lang-ar .m-r-15 {
+  margin-right: 15px;
+}
+.site.site-lang-en {
+  --header-border-left: none;
+  --header-border-right: solid 1px var(--line-color);
+  direction: ltr;
+  text-align: left;
+}
+.site.site-lang-en i + span {
+  margin-left: 5px;
+}
+.site.site-lang-en .m-l-auto {
+  margin-right: auto;
+}
+.site.site-lang-en .m-r-auto {
+  margin-left: auto;
+}
+.site.site-lang-en .m-l-3 {
+  margin-right: 3px;
+}
+.site.site-lang-en .m-l-5 {
+  margin-right: 5px;
+}
+.site.site-lang-en .m-l-10 {
+  margin-right: 10px;
+}
+.site.site-lang-en .m-l-15 {
+  margin-right: 15px;
+}
+.site.site-lang-en .m-l-20 {
+  margin-right: 20px;
+}
+.site.site-lang-en .m-r-3 {
+  margin-left: 3px;
+}
+.site.site-lang-en .m-r-5 {
+  margin-left: 5px;
+}
+.site.site-lang-en .m-r-10 {
+  margin-left: 10px;
+}
+.site.site-lang-en .m-r-15 {
+  margin-left: 15px;
+}

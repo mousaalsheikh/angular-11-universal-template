@@ -6,9 +6,15 @@ import { Api } from '../http/Api';
 })
 export class SharedService {
 
+  controller:string = 'Shared';
+
   constructor(private api: Api) { }
 
-  getData() {
-    return this.api.get('get-date');
+  getWebPage(id) {
+    return this.api.get(`${this.controller}/meta?id=${id}`);
+  }
+
+  getSettings() {
+    return this.api.get(`${this.controller}/settings`);
   }
 }

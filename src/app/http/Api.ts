@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { Utils } from '../classes/utils';
 import { config } from '../config';
 
 @Injectable()
 export class Api {
   public _routeParams: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private utils: Utils) { }
 
   async get(apiName, data?, url?, headers?): Promise<any> {
     return this._get(apiName, data, url, headers).toPromise();
@@ -92,8 +93,11 @@ export class Api {
 
   getHeaders(customHeaders?) {
     let _headers = {
-      'Content-Type': 'application/json'
-    };
+      'Content-Type': 'application/json',
+      'env': (config.isProduction ? 'prod' : 'test'),
+      'lang': this.utils.getLanguage(),
+      "node": (this.utils.isBrowser() ? "client" : "server")
+  };
     if (customHeaders) {
       let customHeaderKeys = Object.keys(customHeaders);
       for (var i = 0; i < customHeaderKeys.length; i++) {

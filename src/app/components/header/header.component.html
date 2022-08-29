@@ -1,1 +1,41 @@
-<p>header works!</p>
+<div class="top-header dir-{{lang}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="top-header-wrapper" *ngIf="settings.PhoneNumberToCall">
+                    <h1 class="website-title m-l-auto">{{utils.getString('site_name')}}</h1>
+                    <div class="top-header-items">
+                        <a class="phone-call" href="tel:{{settings.PhoneNumberToCall}}" target="_blank">
+                            <i class="far fa-phone-alt" *ngIf="lang == 'en'"></i>
+                            <i class="far fa-phone" *ngIf="lang == 'ar'"></i>
+                            <span>{{settings.PhoneNumberDisplay}}</span>
+                        </a>
+                        <a href="{{settings._Twitter}}" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="{{settings._Instagram}}" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="{{settings._TikTok}}" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="{{utils.changeUrl()}}" class="lang-link">
+                            {{utils.getString('lang')}}
+                        </a>                                 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="header-wrapper">
+                    <a href="#" routerLink="/{{lang}}/home" class="logo m-l-auto">
+                        <img src="../../../assets/images/logo.png" alt="Adeed - عضيد" />
+                    </a>
+                    <div class="web-menu">
+                        <a href="#" routerLink="/{{lang}}/home" class="m-r-10" routerLinkActive="active">الرئيسية</a>
+                        <a href="#" routerLink="/{{lang}}/template" class="m-r-10" routerLinkActive="active">قالب</a>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,17 +1,16 @@
-let siteName = 'Mousa Alsheikh';
-
+let siteName = 'Adeed - عضيد';
+let baseUrl = 'https://siteapi.adeed.com/';
+ 
 export const config = {
-  apiUrl: 'YOUR API URL',
-  googleAnalyticsId: 'UA-999999-9',
+  isProduction: false,
+  apiUrl: `${baseUrl}api/`,
+  logoUrl: `${baseUrl}logo.png`,
+  defaultLanguage: 'ar',
   meta: {
-    siteName: `${siteName}`,
-    keywords: `${siteName}`,
-    description: `${siteName}`,
-    og_title: `${siteName}`,
-    og_description: `${siteName}`,
+    siteName: siteName,
     og_image: 'assets/images/og-image.jpg',
     og_site_name: `${siteName}`,
     og_type: 'Website',
-    siteUrl: 'http://www.mousa-alsheikh.com'
+    siteUrl: 'https://adeed.com'
   }
 };

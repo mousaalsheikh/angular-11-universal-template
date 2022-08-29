@@ -1,7 +1,10 @@
-<div class="container" [class.ssr-not-loaded]="!isBorwser">
-  <div class="row">
-    <div class="col-12">
-      <router-outlet></router-outlet>
-    </div>
+<div class="site site-lang-{{lang}}" [class.ssr-not-loaded]="!isBorwser">
+  <app-header></app-header>
+  <div class="website">  
+    <router-outlet></router-outlet>
   </div>
+  <app-footer></app-footer>
+</div>
+<div class="mobile-menu">
+  ...
 </div>

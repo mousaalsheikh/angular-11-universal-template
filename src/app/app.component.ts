@@ -3,7 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router, NavigationEnd, NavigationStart } from '@angular/router';
 import * as $ from 'jquery';
 import { config } from './config';
-declare let gtag: Function;
+import { Utils } from './classes/utils';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +12,12 @@ declare let gtag: Function;
 })
 export class AppComponent {
 
-  title = 'kinzi-ng-node';
+  lang:string = '';
   isBorwser: boolean = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: any,
-    private router: Router, private activatedRoute: ActivatedRoute) {
+    private router: Router, private activatedRoute: ActivatedRoute,
+    public utils: Utils) {
     this.isBorwser = isPlatformBrowser(this.platformId);
   }
 
@@ -29,12 +30,8 @@ export class AppComponent {
     });
     this.router.events.subscribe((url: NavigationEnd) => {
       if (url && url.urlAfterRedirects) {
-        if (this.isBorwser) {
-          gtag('config', config.googleAnalyticsId,
-            {
-              'page_path': url.urlAfterRedirects
-            }
-          );
+        this.lang = this.utils.getLanguage();
+        if (this.isBorwser) {          
         }        
       }
       return;

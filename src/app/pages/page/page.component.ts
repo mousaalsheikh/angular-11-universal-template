@@ -6,15 +6,17 @@ import { SharedService } from '../../services/shared.service';
 import { config } from '../../config';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.less']
+  selector: 'app-page',
+  templateUrl: './page.component.html',
+  styleUrls: ['./page.component.less']
 })
-export class HomeComponent implements OnInit {
+export class PageComponent implements OnInit {
 
   lang:string = '';
   isBrowser:boolean;
   webPage:any = {};
+  pageId:string = '';
+  htmlContent:any;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -24,17 +26,23 @@ export class HomeComponent implements OnInit {
     private sanitizer: DomSanitizer) {
       this.isBrowser = this.utils.isBrowser();
       this.lang = this.utils.getLanguage();
+      this.activatedRoute.params.subscribe(params => {
+        if(params){
+          if (params['id']) this.pageId = params['id'];        
+          this.getMetaTags(this.pageId);
+        }
+      });    
    }
 
-  ngOnInit(): void {
-    this.getMetaTags('home');
+  ngOnInit(): void {    
   }
 
   getMetaTags(pageId) {
     this.service.getWebPage(pageId).then(data => {
       if(data.data.page.length > 0){
         this.webPage = data.data.page[0];        
-        this.pageTitle.setTitle(this.webPage.pgTitle);                
+        this.pageTitle.setTitle(this.webPage.pgTitle);        
+        this.htmlContent = this.sanitizer.bypassSecurityTrustHtml(this.webPage.PageContent);
          this.metaTagService.addTags([
            { name: 'keywords', content: this.webPage.ggKeywords },
            { name: 'description', content: this.webPage.ggDescription },

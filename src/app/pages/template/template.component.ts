@@ -6,11 +6,11 @@ import { SharedService } from '../../services/shared.service';
 import { config } from '../../config';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.less']
+  selector: 'app-template',
+  templateUrl: './template.component.html',
+  styleUrls: ['./template.component.less']
 })
-export class HomeComponent implements OnInit {
+export class TemplateComponent implements OnInit {
 
   lang:string = '';
   isBrowser:boolean;
