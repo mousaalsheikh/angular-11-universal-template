@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './pages/landing/landing.component';
 import { TemplateComponent } from './pages/template/template.component';
 import { PageComponent } from './pages/page/page.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PageComponent } from './pages/page/page.component';
     HomeComponent,
     LandingComponent,
     TemplateComponent,
-    PageComponent
+    PageComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -39,7 +41,7 @@ import { PageComponent } from './pages/page/page.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [Api, Utils,
+  providers: [Api, Utils, 
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

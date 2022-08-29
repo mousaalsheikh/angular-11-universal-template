@@ -17,4 +17,8 @@ export class SharedService {
   getSettings() {
     return this.api.get(`${this.controller}/settings`);
   }
+
+  getSlider() {
+    return this.api.get(`${this.controller}/slider`);
+  }
 }

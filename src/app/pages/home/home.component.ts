@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   lang:string = '';
   isBrowser:boolean;
   webPage:any = {};
+  slides = [];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -28,6 +29,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMetaTags('home');
+    this.getData();
+  }
+
+  getData(){
+    this.service.getSlider().then(resp => {
+      this.slides = resp.data.slides;
+    });
   }
 
   getMetaTags(pageId) {

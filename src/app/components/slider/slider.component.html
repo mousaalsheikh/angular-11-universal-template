@@ -1,0 +1,33 @@
+<div class="swiper">
+    
+    <div class="swiper-wrapper">
+      
+      <div class="swiper-slide the-slide" *ngFor="let slide of slides">
+        <img src="../../../assets/images/slide.jpg" alt="{{slide.SlideTitle}}" class="default-slide" />
+        <div class="slide-image">            
+            <img src="{{utils.getImage(slide.SlidePhoto, 1920, 800)}}" alt="{{slide.SlideTitle}}" />
+        </div>
+        <div class="slide-content dir-{{lang}}" *ngIf="slide.SlideTitle">
+           <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="slide-card-wrapper">
+                            <div class="slide-card">
+                                <div class="slide-title">{{slide.SlideTitle}}</div>
+                                <div class="slide-desc" *ngIf="slide.SlideDesc">{{slide.SlideDesc}}</div>
+                                <div class="slide-link" *ngIf="slide.SlideLink">
+                                    <a href="{{slide.SlideLink}}"><span>{{utils.getString('read_more')}}</span></a>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+           </div>
+        </div>
+      </div>
+      
+    </div>  
+    
+    <div class="swiper-button-next" *ngIf="isBrowser" (click)="doNext()"></div>
+    <div class="swiper-button-prev" *ngIf="isBrowser" (click)="doPrev()"></div>
+</div>
