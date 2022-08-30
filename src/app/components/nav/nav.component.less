@@ -39,8 +39,20 @@ nav.layout-mobile-menu a {
 
 nav.layout-mobile-menu.dir-ar a {
     text-align: right;
+
+    border-right: solid 3px var(--accent-color);
+
+    &.active {
+        border-right: solid 3px #fff;
+    }
 }
 
 nav.layout-mobile-menu.dir-en a {
     text-align: left;
+
+    border-left: solid 3px var(--accent-color);
+
+    &.active {
+        border-left: solid 3px #fff;
+    }
 }

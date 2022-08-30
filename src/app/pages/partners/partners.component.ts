@@ -6,7 +6,7 @@ import { SharedService } from '../../services/shared.service';
 import { config } from '../../config';
 
 @Component({
-  selector: 'app-partners',
+  selector: 'app-acc-partners',
   templateUrl: './partners.component.html',
   styleUrls: ['./partners.component.less']
 })
