@@ -144,3 +144,159 @@ a{
     }
   }
 }
+
+.btn-span{
+  position: relative;
+  top: 1px;
+}
+
+.hide{
+  display: none !important;
+}
+
+.adeed-home{
+  .second-title{
+    display: none;
+  }
+}
+
+section#adeed-home {
+  background: #f5f5f5;
+  padding: 50px 0;
+  margin-bottom: 50px;
+
+  .section-title {
+    font-weight: 700;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+  }
+  
+  .section-content {
+    font-size: 1.1em;
+    color: #a09e9e;
+  }
+}
+
+@media screen and (max-width:992px) {
+  section#adeed-home{
+    text-align: center;
+  }
+  .photo-col{
+    display: none;
+  }
+}
+
+.feedback-swiper{
+
+  span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #f7f7f7;
+  }
+}
+
+.adeed-call-center {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: bidi-override;
+}
+
+.site, .mobile-menu{
+  transition: all 500ms;
+}
+
+.mobile-menu, .mobile-menu-overlay{
+  display: none;
+}
+
+body.mobile-menu-expanded{
+  overflow: hidden;
+
+  .site {
+      min-height:100vh;
+      position: relative;              
+      z-index:999;
+  }
+
+  .mobile-menu {
+      display: block;
+      background: #137daf;
+      min-height:100vh;
+      width: 80%;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      z-index:9999;
+      box-shadow: 0 0 20px rgba(0,0, 0, 0.5);  
+  }
+
+  .mobile-menu-overlay {
+      cursor:pointer;    
+      display: block; 
+      background: rgba(0,0,0,0.4);
+      min-height:100vh;
+      width: 100%;
+      overflow: hidden;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index:999;
+  }
+
+  &.menu-lang-ar{
+      .site{
+          transform: translate(80%);
+      }
+
+      .mobile-menu{
+          left: 0;
+      }
+  }
+
+  &.menu-lang-en{
+    .site{
+        transform: translate(-80%);
+    }
+
+    .mobile-menu{
+        right: 0;
+    }
+  }
+}
+
+button.toggle-mobile-menu {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  line-height: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  width: 40px;
+  height: 36px;
+}
+
+@media screen and (min-width:1300px) {
+  .web-menu{
+    display: block;
+  }
+
+  button.toggle-mobile-menu{
+    display: none;
+  }
+
+  .mobile-menu, .mobile-menu-overlay{
+    display: none;
+  }
+}
+
+@media screen and (max-width:1300px) {
+  .web-menu{
+    display: none;
+  }
+
+  button.toggle-mobile-menu{
+    display: flex;
+  }
+}
+

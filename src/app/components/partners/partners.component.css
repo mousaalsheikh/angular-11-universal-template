@@ -1,0 +1,11 @@
+.partner-image {
+  text-align: center;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #dcd9d9;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 30px;
+}

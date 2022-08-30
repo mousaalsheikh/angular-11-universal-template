@@ -16,6 +16,14 @@ export class HomeComponent implements OnInit {
   isBrowser:boolean;
   webPage:any = {};
   slides = [];
+  top = [];
+  main = [];
+  all = [];
+  promiseLoaded:boolean = false;
+  whyLoaded:boolean = false;
+  special = [];
+  partners = [];
+  feedback = [];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -24,7 +32,7 @@ export class HomeComponent implements OnInit {
     private service: SharedService,
     private sanitizer: DomSanitizer) {
       this.isBrowser = this.utils.isBrowser();
-      this.lang = this.utils.getLanguage();
+      this.lang = this.utils.getLanguage();          
    }
 
   ngOnInit(): void {
@@ -35,6 +43,20 @@ export class HomeComponent implements OnInit {
   getData(){
     this.service.getSlider().then(resp => {
       this.slides = resp.data.slides;
+    });
+    this.service.getHomeCategories().then(resp => {
+      this.top = resp.top;
+      this.main = resp.main;
+      this.all = resp.all;      
+    });
+    this.service.getSpecial().then(resp => {
+      this.special = resp.data.spacial;
+    });
+    this.service.getPartners().then(resp => {
+      this.partners = resp.data.partners;
+    });
+    this.service.getBackfack().then(resp => {
+      this.feedback = resp.data.feedback;
     });
   }
 

@@ -1,18 +1,86 @@
 <app-slider [slides]="slides"></app-slider>
-<section id="intro">
+<section id="top-categories" *ngIf="top.length > 0">
     <div class="container">
         <div class="row">
-            <div class="container">
-                <app-section [sectionId]="'intro'"></app-section>
+            <div class="col-12">
+                <div class="top-categories">
+                    <h3 class="section-title">{{utils.getString('what_to_to')}}</h3>
+                    <div class="top-wrapper">
+                        <a href="javascript:void(0)" *ngFor="let item of top">
+                            <span class="cat-photo">
+                                <img src="{{utils.getImage(item.Icon, 90, 90)}}" alt="{{utils.alt()}}" />
+                            </span>
+                            <span class="cat-name">
+                                {{item['CatName_' + lang]}}
+                            </span>
+                        </a>
+                    </div>                    
+                </div>
             </div>
         </div>
     </div>
 </section>
-<section id="why-adeed">
+<section id="promise" [class.hide]="!promiseLoaded">
     <div class="container">
         <div class="row">
-            <div class="container">
-                <app-section [sectionId]="'why-adeed-home'"></app-section>
+            <div class="col-12">
+                <div class="adeed-promise"><app-section [sectionId]="'promise'" (onLoaded)="promiseLoaded = true"></app-section></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="adeed-is-special" *ngIf="special.length > 0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="top-special">
+                    <h3 class="section-title special-header">{{utils.getString('why_special')}}</h3>
+                    <div class="special-wrapper">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-12" *ngFor="let item of special">
+                                <div class="special">
+                                    <div class="special-icon" [innerHTML]="item.Icon"></div>
+                                    <div class="special-info m-r-15">
+                                        <div class="special-title">{{item['Title_' + lang]}}</div>
+                                        <div class="special-desc">{{item['Desc_' + lang]}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="adeed-home" [class.hide]="!whyLoaded">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 photo-col">
+                <img src="http://wahabali.com/work/medical-guide/images/services-img1.jpg" />
+            </div>
+            <div class="col-lg-6">
+                <div class="adeed-home"><app-section [sectionId]="'why-adeed-home'" (onLoaded)="whyLoaded = true"></app-section></div>
+                <a href="#" routerLink="/{{lang}}/page/about" class="about-more"><span class="btn-span">{{utils.getString('read_more')}}</span></a>                
+            </div>
+        </div>
+    </div>
+</section>
+<section id="partners" *ngIf="partners.length > 0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="section-title special-header">{{utils.getString('accr_part')}}</h3>
+                <app-partners [partners]="partners"></app-partners>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="feedback" *ngIf="feedback.length > 0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <app-feedback [feedback]="feedback"></app-feedback>
             </div>
         </div>
     </div>

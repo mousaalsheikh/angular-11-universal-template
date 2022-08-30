@@ -1,0 +1,14 @@
+<div class="page-cover">
+    <img src="../../../assets/images/page-title.jpg" *ngIf="!webPage.PagePhoto" alt="Adeed - عضيد" />
+    <img src="{{utils.getImage(webPage.PagePhoto, 1920, 290)}}" *ngIf="webPage.PagePhoto" alt="Adeed - عضيد" />
+</div>
+<div class="page-title-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 *ngIf="webPage.PageTitle">{{webPage.PageTitle}}</h1>
+                <h1 *ngIf="!webPage.PageTitle">&nbsp;</h1>
+            </div>
+        </div>
+    </div>
+</div>

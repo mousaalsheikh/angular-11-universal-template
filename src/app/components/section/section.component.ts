@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Utils } from '../../classes/utils';
 import { Meta, Title, DomSanitizer } from '@angular/platform-browser';
@@ -18,6 +18,7 @@ export class SectionComponent implements OnInit {
   section:any = {};
   htmlContent_en:any;
   htmlContent_ar:any;
+  @Output() onLoaded = new EventEmitter();
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -35,6 +36,7 @@ export class SectionComponent implements OnInit {
       this.section = resp.data.section[0];
       this.htmlContent_en = this.sanitizer.bypassSecurityTrustHtml(this.section.SectionContent_en);
       this.htmlContent_ar = this.sanitizer.bypassSecurityTrustHtml(this.section.SectionContent_ar);
+      this.onLoaded.emit();
     });
   }
 }

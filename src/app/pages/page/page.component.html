@@ -1,1 +1,8 @@
-<p>page works!</p>
+<app-page-title [webPage]="webPage" [lang]="lang"></app-page-title>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="web-page-content" [innerHTML]="webPage.PageContent"></div>
+        </div>
+    </div>
+</div>

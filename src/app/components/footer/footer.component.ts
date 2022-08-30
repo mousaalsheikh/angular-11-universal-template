@@ -22,7 +22,12 @@ export class FooterComponent implements OnInit {
     private service: SharedService,
     private sanitizer: DomSanitizer) {
       this.isBrowser = this.utils.isBrowser();
-      this.lang = this.utils.getLanguage();
+      this.router.events.subscribe((url: NavigationEnd) => {
+        if (url && url.urlAfterRedirects) {
+          this.lang = this.utils.getLanguage();       
+        }
+        return;
+      });   
    }
 
   ngOnInit(): void {

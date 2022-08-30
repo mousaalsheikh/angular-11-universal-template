@@ -39,6 +39,18 @@ export class Utils {
         }
     }
 
+    isHome():boolean{   
+        if (this.router.url.indexOf('/en/home') != -1 || this.router.url.indexOf('/ar/home') != -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    alt():string{
+        return 'Adeed - عضيد';
+    }
+
     changeUrl():string{
         let url = this.router.url;
         let lang = this.getLanguage();

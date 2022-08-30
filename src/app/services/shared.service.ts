@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { config } from '../config';
 import { Api } from '../http/Api';
 
 @Injectable({
@@ -24,5 +25,21 @@ export class SharedService {
 
   getSlider() {
     return this.api.get(`${this.controller}/slider`);
+  }
+
+  getSpecial() {
+    return this.api.get(`${this.controller}/get-special`);
+  }
+
+  getHomeCategories(){
+    return this.api.get('', '', config.bookingsApiUrl + `/get-home-categories`);
+  }
+
+  getPartners() {
+    return this.api.get(`${this.controller}/get-partners`);
+  }
+
+  getBackfack() {
+    return this.api.get(`${this.controller}/get-feedback`);
   }
 }

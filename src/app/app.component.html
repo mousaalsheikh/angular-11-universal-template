@@ -1,4 +1,4 @@
-<div class="site site-lang-{{lang}}" [class.ssr-not-loaded]="!isBorwser">
+<div class="site site-lang-{{lang}}" [class.ssr-not-loaded]="!isBrowser">
   <app-header></app-header>
   <div class="website">  
     <router-outlet></router-outlet>
@@ -6,5 +6,6 @@
   <app-footer></app-footer>
 </div>
 <div class="mobile-menu">
-  ...
+  <app-nav [layout]="'mobile-menu'"></app-nav>
 </div>
+<div class="mobile-menu-overlay" (click)="toggleMobileMenu()"></div>

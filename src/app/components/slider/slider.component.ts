@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Utils } from '../../classes/utils';
 import { config } from '../../config';
-import { Swiper, EffectFade } from 'swiper';
+import { Swiper, EffectFade, Autoplay, Navigation } from 'swiper';
 
 @Component({
   selector: 'app-slider',
@@ -15,7 +15,6 @@ export class SliderComponent implements OnInit {
   seconds:number = 10;
   lang:string = '';
   isBrowser:boolean;
-  swiper:any;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils) {
@@ -25,35 +24,31 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.isBrowser){
-      Swiper.use([EffectFade]);
-      this.swiper = new Swiper('.swiper', {
-        spaceBetween: 0,
-        slidesPerView: 1,
-        effect: 'fade',
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },        
-      });      
-      setInterval(() => {
-        if(this.swiper.activeIndex == this.slides.length - 1){
-          this.swiper.slideTo(0);
-        } else {
-          this.swiper.slideNext();
-        }        
-      }, 1000 * this.seconds);
+      this.setupSwiper();
+      setTimeout(() => {
+         this.setupSwiper();
+      }, 1000);         
     }    
   }
 
-  doNext(){
-    if(this.swiper.activeIndex == this.slides.length - 1){
-      this.swiper.slideTo(0);
-    } else {
-      this.swiper.slideNext();
-    }        
-  }
-
-  doPrev(){
-    this.swiper.slidePrev();
+  setupSwiper(){
+    Swiper.use([EffectFade]);
+    Swiper.use([Autoplay]);
+    Swiper.use([Navigation]);
+    const swiper = new Swiper('.main-swiper', {
+          spaceBetween: 0,
+          slidesPerView: 1,
+          effect: 'fade',
+          loop: true, 
+          loopedSlides: 100,
+          autoplay: {
+            delay: this.seconds * 1000,
+            disableOnInteraction: false,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },     
+    });  
   }
 }

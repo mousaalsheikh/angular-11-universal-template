@@ -13,12 +13,12 @@ import { Utils } from './classes/utils';
 export class AppComponent {
 
   lang:string = '';
-  isBorwser: boolean = false;
+  isBrowser: boolean = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: any,
     private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils) {
-    this.isBorwser = isPlatformBrowser(this.platformId);
+    this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   ngOnInit() {
@@ -26,15 +26,24 @@ export class AppComponent {
       if (!(evt instanceof NavigationEnd)) {
         return;
       }
-      if (this.isBorwser) window.scrollTo(0, 0);      
+      if (this.isBrowser) {
+        $('body').removeClass('mobile-menu-expanded'); 
+        window.scrollTo(0, 0);      
+      }
     });
     this.router.events.subscribe((url: NavigationEnd) => {
       if (url && url.urlAfterRedirects) {
         this.lang = this.utils.getLanguage();
-        if (this.isBorwser) {          
+        if (this.isBrowser) {          
         }        
       }
       return;
     });
+  }
+
+  toggleMobileMenu(){
+    if(this.isBrowser){
+      $('body').removeClass('mobile-menu-expanded');      
+    }
   }
 }

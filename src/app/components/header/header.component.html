@@ -8,7 +8,7 @@
                         <a class="phone-call" href="tel:{{settings.PhoneNumberToCall}}" target="_blank">
                             <i class="far fa-phone-alt" *ngIf="lang == 'en'"></i>
                             <i class="far fa-phone" *ngIf="lang == 'ar'"></i>
-                            <span>{{settings.PhoneNumberDisplay}}</span>
+                            <span class="adeed-call-center">{{settings.PhoneNumberDisplay}}</span>
                         </a>
                         <a class="phone-call top-email" href="mailto:{{settings.EmailAddress}}" target="_blank">
                             <i class="far fa-envelope"></i>
@@ -17,7 +17,7 @@
                         <a href="{{settings._Twitter}}" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="{{settings._Instagram}}" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="{{settings._TikTok}}" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="{{utils.changeUrl()}}" class="lang-link">
+                        <a href="{{utils.changeUrl()}}" (click)="changeLanguage()" class="lang-link">
                             {{utils.getString('lang')}}
                         </a>                                 
                     </div>
@@ -32,12 +32,14 @@
             <div class="col-12">
                 <div class="header-wrapper">
                     <a href="#" routerLink="/{{lang}}/home" class="logo m-l-auto">
-                        <img src="../../../assets/images/logo.png" alt="Adeed - عضيد" />
+                        <img src="../../../assets/images/logo.png" alt="{{utils.alt()}}" />
                     </a>
                     <div class="web-menu">
-                        <a href="#" routerLink="/{{lang}}/home" class="m-r-10" routerLinkActive="active">الرئيسية</a>
-                        <a href="#" routerLink="/{{lang}}/template" class="m-r-10" routerLinkActive="active">قالب</a>
+                        <app-nav [layout]="'desktop-menu'"></app-nav>
                     </div>
+                    <button class="toggle-mobile-menu" (click)="toggleMobileMenu()">
+                        <i class="fal fa-bars"></i>
+                    </button>
                 </div>                
             </div>
         </div>

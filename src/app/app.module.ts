@@ -19,6 +19,13 @@ import { TemplateComponent } from './pages/template/template.component';
 import { PageComponent } from './pages/page/page.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { SectionComponent } from './components/section/section.component';
+import { PartnersComponent } from './components/partners/partners.component';
+import { PageTitleComponent } from './components/page-title/page-title.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { NavComponent } from './components/nav/nav.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +37,14 @@ import { SectionComponent } from './components/section/section.component';
     TemplateComponent,
     PageComponent,
     SliderComponent,
-    SectionComponent
+    SectionComponent,
+    PartnersComponent,
+    PageTitleComponent,
+    FeedbackComponent,
+    ContactComponent,
+    NavComponent,
+    ServicesComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

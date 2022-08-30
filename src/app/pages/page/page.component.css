@@ -1,0 +1,8 @@
+.web-page-content {
+  font-family: var(--font-family) !important;
+  font-size: 1.1em !important;
+}
+.web-page-content * {
+  font-family: var(--font-family) !important;
+  font-size: 1em !important;
+}

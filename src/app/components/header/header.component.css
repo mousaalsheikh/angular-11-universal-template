@@ -52,6 +52,15 @@
   position: relative;
   top: -2px;
 }
+.top-email i {
+  position: relative;
+  top: 1px;
+}
+@media screen and (max-width: 1024px) {
+  .top-email {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 768px) {
   .top-header h1.website-title {
     display: none;
@@ -90,20 +99,4 @@ header .header-wrapper {
 header a.logo {
   width: 180px;
   max-width: 40vw;
-}
-header .web-menu a {
-  background-color: #fff;
-  font-size: 1.1em;
-  color: var(--gray-color);
-  padding: 12px 15px 10px;
-  border-radius: 5px;
-  display: inline-block;
-  line-height: 1;
-  text-decoration: none;
-  transition: all 300ms;
-}
-header .web-menu a.active,
-header .web-menu a:hover {
-  background-color: var(--accent-color);
-  color: #fff;
 }

@@ -1,0 +1,135 @@
+section#top-categories {
+  padding: 50px 0;
+  text-align: center;
+}
+h3.section-title {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+.top-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.top-wrapper a {
+  flex: 0 0 33.333333%;
+  margin-top: 15px;
+  text-decoration: none;
+}
+span.cat-photo {
+  display: block;
+  opacity: 0.7;
+}
+span.cat-photo img {
+  width: 56px;
+}
+span.cat-name {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+@media screen and (max-width: 575px) {
+  h3.section-title {
+    font-size: 1.6em;
+  }
+  .top-wrapper a {
+    flex: 0 0 50%;
+  }
+  span.cat-photo img {
+    width: 36px;
+  }
+  span.cat-name {
+    font-size: 1em;
+  }
+}
+#promise {
+  background: url(../../../assets/images/promise.jpeg) no-repeat center center fixed;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#promise .adeed-promise {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8em;
+  padding: 50px;
+  text-align: center;
+  height: 500px;
+}
+@media screen and (max-width: 575px) {
+  #promise .adeed-promise {
+    font-size: 1.8em;
+    padding: 35px;
+  }
+}
+@media screen and (max-width: 400px) {
+  #promise .adeed-promise {
+    font-size: 1.6em;
+    padding: 30px;
+  }
+}
+section#adeed-is-special {
+  padding: 50px 0;
+}
+h3.section-title.special-header {
+  text-align: center;
+}
+.special {
+  display: flex;
+  margin-top: 15px;
+  align-items: flex-start;
+}
+.special-icon {
+  font-size: 2.5em;
+  background-color: var(--accent-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 5px;
+}
+.special-info {
+  flex: 1;
+}
+.special-title {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: var(--accent-color);
+}
+.special-desc {
+  white-space: pre-line;
+  font-size: 0.95em;
+  color: #808080;
+}
+#partners {
+  margin-bottom: 35px;
+}
+a.about-more {
+  display: inline-block;
+  background-color: #979494;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+#feedback {
+  background: url(../../../assets/images/feedback.jpeg) no-repeat center center fixed;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

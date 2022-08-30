@@ -5,6 +5,7 @@ export const config = {
   isProduction: false,
   apiUrl: `${baseUrl}api/`,
   logoUrl: `${baseUrl}logo.png`,
+  bookingsApiUrl: 'https://bkngsapi.adeed.com/api/Shared/',
   defaultLanguage: 'ar',
   meta: {
     siteName: siteName,

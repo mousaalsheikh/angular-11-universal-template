@@ -4,6 +4,7 @@ import { Utils } from '../../classes/utils';
 import { Meta, Title, DomSanitizer } from '@angular/platform-browser';
 import { SharedService } from '../../services/shared.service';
 import { config } from '../../config';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-header',
@@ -23,7 +24,12 @@ export class HeaderComponent implements OnInit {
     private service: SharedService,
     private sanitizer: DomSanitizer) {
       this.isBrowser = this.utils.isBrowser();
-      this.lang = this.utils.getLanguage();      
+      this.router.events.subscribe((url: NavigationEnd) => {
+        if (url && url.urlAfterRedirects) {
+          this.lang = this.utils.getLanguage();       
+        }
+        return;
+      });     
    }
 
   ngOnInit(): void {
@@ -32,10 +38,22 @@ export class HeaderComponent implements OnInit {
         this.settings = JSON.parse(localStorage.setting);
       }
     }
-    this.service.getSettings().then(resp => {
-      this.lang = this.utils.getLanguage();      
+    this.service.getSettings().then(resp => { 
       this.settings = resp.data.settings[0];
       if(this.isBrowser) localStorage.setting = JSON.stringify(this.settings);
     });
+  }
+
+  toggleMobileMenu(){
+    if(this.isBrowser){
+      $('body').addClass('mobile-menu-expanded');
+      $('body').addClass('menu-lang-' + this.lang);
+    }
+  }
+
+  changeLanguage(){
+    if(this.isBrowser){
+      localStorage.lang = (this.lang == 'ar' ? 'en' : 'ar');
+    }
   }
 }
