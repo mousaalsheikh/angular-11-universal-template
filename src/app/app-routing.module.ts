@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PageComponent } from './pages/page/page.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { PartnersAccrComponent } from './pages/partners/partners.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   //{ path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: ':lang/page/:id', component: PageComponent },
   { path: ':lang/services', component: ServicesComponent },
   { path: ':lang/accreditations-and-partnership', component: PartnersAccrComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({

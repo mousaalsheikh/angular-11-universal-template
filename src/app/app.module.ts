@@ -27,6 +27,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { PartnersAccrComponent } from './pages/partners/partners.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { PartnersAccrComponent } from './pages/partners/partners.component';
     NavComponent,
     ServicesComponent,
     ContactUsComponent,
-    PartnersAccrComponent
+    PartnersAccrComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
