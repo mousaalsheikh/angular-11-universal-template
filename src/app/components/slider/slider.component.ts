@@ -15,6 +15,7 @@ export class SliderComponent implements OnInit {
   seconds:number = 10;
   lang:string = '';
   isBrowser:boolean;
+  swiper:any;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils) {
@@ -23,11 +24,10 @@ export class SliderComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    if(this.isBrowser){
-      this.setupSwiper();
+    if(this.isBrowser){      
       setTimeout(() => {
-         this.setupSwiper();
-      }, 1000);         
+        this.setupSwiper();
+      }, 500);         
     }    
   }
 
@@ -35,7 +35,7 @@ export class SliderComponent implements OnInit {
     Swiper.use([EffectFade]);
     Swiper.use([Autoplay]);
     Swiper.use([Navigation]);
-    const swiper = new Swiper('.main-swiper', {
+    this.swiper = new Swiper('.main-swiper', {
           spaceBetween: 0,
           slidesPerView: 1,
           effect: 'fade',
