@@ -1,1 +1,17 @@
-<p>partners works!</p>
+<app-page-title [webPage]="webPage" [lang]="lang"></app-page-title>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="web-page-content" *ngIf="webPage.PageContent" [innerHTML]="htmlContent"></div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let item of partners">
+                    <div class="partner-item">            
+                        <img src="{{getLogo(item.PartnerLogo)}}" alt="{{item['PartnetName_' + lang]}}" />
+                    </div>               
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,29 @@
 <app-page-title [webPage]="webPage" [lang]="lang"></app-page-title>
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <div class="web-page-content" [innerHTML]="webPage.PageContent"></div>
+        <div class="col-12" *ngIf="!isContact">
+            <div class="web-page-content" *ngIf="webPage.PageContent" [innerHTML]="htmlContent"></div>
+        </div>
+        <div class="col-lg-8 col-12" *ngIf="isContact">
+            <div class="web-page-content" *ngIf="webPage.PageContent" [innerHTML]="htmlContent"></div>
+            <div class="page-contact-info" *ngIf="settings.PhoneNumberToCall">
+                <div>
+                    <a class="call-center" href="tel:{{settings.PhoneNumberToCall}}" target="_blank">
+                        <i class="far fa-phone-alt m-l-10" *ngIf="lang == 'en'"></i>
+                        <i class="far fa-phone m-l-10" *ngIf="lang == 'ar'"></i>
+                        <span class="adeed-call-center">{{settings.PhoneNumberDisplay}}</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="email-center" href="mailto:{{settings.EmailAddress}}" target="_blank">
+                        <i class="far fa-envelope m-l-10"></i>
+                        <span>{{settings.EmailAddress}}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-12" *ngIf="isContact">
+            <app-contact></app-contact>
         </div>
     </div>
 </div>

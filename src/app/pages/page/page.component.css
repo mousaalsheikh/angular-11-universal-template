@@ -1,8 +1,21 @@
-.web-page-content {
-  font-family: var(--font-family) !important;
-  font-size: 1.1em !important;
+.page-contact-info {
+  margin-bottom: 20px;
 }
-.web-page-content * {
-  font-family: var(--font-family) !important;
-  font-size: 1em !important;
+.page-contact-info a {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  border: solid 1px #d7caca;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  max-width: 210px;
+  color: var(--accent-color);
+  background-color: #faf9f9;
+  text-decoration: none;
+}
+.page-contact-info a i {
+  font-size: 1.3em;
+  position: relative;
+  top: -3px;
 }

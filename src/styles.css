@@ -37,6 +37,10 @@ img {
 a {
   color: var(--accent-color);
 }
+b,
+strong {
+  font-weight: 700;
+}
 .site.site-lang-ar {
   --header-border-left: solid 1px var(--line-color);
   --header-border-right: none;
@@ -244,4 +248,13 @@ button.toggle-mobile-menu {
   button.toggle-mobile-menu {
     display: flex;
   }
+}
+.web-page-content {
+  font-family: var(--font-family) !important;
+  font-size: 1.1em !important;
+  margin-bottom: 20px;
+}
+.web-page-content * {
+  font-family: var(--font-family) !important;
+  font-size: 1em !important;
 }

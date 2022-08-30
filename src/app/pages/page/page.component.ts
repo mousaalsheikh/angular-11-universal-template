@@ -15,8 +15,10 @@ export class PageComponent implements OnInit {
   lang:string = '';
   isBrowser:boolean;
   webPage:any = {};
+  settings:any = {};
   pageId:string = '';
   htmlContent:any;
+  isContact:boolean = false;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -28,13 +30,31 @@ export class PageComponent implements OnInit {
       this.lang = this.utils.getLanguage();
       this.activatedRoute.params.subscribe(params => {
         if(params){
-          if (params['id']) this.pageId = params['id'];        
+          if (params['id']) this.pageId = params['id'];   
+          if(this.pageId == 'contact-us' || this.pageId == 'for-corporate') {
+            this.getContactInfo();
+            this.isContact = true;
+          } else {
+            this.isContact = false;
+          }
           this.getMetaTags(this.pageId);
         }
       });    
    }
 
   ngOnInit(): void {    
+  }
+
+  getContactInfo(){
+    if(this.isBrowser){
+      if(localStorage.settings){
+        this.settings = JSON.parse(localStorage.setting);
+      }
+    }
+    this.service.getSettings().then(resp => { 
+      this.settings = resp.data.settings[0];
+      if(this.isBrowser) localStorage.setting = JSON.stringify(this.settings);
+    });
   }
 
   getMetaTags(pageId) {
