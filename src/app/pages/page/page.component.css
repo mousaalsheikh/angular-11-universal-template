@@ -1,12 +1,9 @@
-.page-contact-info {
-  margin-bottom: 20px;
-}
 .page-contact-info a {
   display: flex;
   padding: 15px;
   align-items: center;
   border: solid 1px #d7caca;
-  margin-top: 15px;
+  margin-bottom: 20px;
   border-radius: 5px;
   font-size: 1.2em;
   max-width: 210px;
