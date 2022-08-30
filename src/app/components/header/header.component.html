@@ -10,6 +10,10 @@
                             <i class="far fa-phone" *ngIf="lang == 'ar'"></i>
                             <span>{{settings.PhoneNumberDisplay}}</span>
                         </a>
+                        <a class="phone-call top-email" href="mailto:{{settings.EmailAddress}}" target="_blank">
+                            <i class="far fa-envelope"></i>
+                            <span>{{settings.EmailAddress}}</span>
+                        </a>
                         <a href="{{settings._Twitter}}" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="{{settings._Instagram}}" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="{{settings._TikTok}}" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>

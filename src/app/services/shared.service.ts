@@ -14,6 +14,10 @@ export class SharedService {
     return this.api.get(`${this.controller}/meta?id=${id}`);
   }
 
+  getSection(id) {
+    return this.api.get(`${this.controller}/section?id=${id}`);
+  }
+
   getSettings() {
     return this.api.get(`${this.controller}/settings`);
   }

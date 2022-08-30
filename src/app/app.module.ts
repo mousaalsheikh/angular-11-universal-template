@@ -18,6 +18,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { TemplateComponent } from './pages/template/template.component';
 import { PageComponent } from './pages/page/page.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { SectionComponent } from './components/section/section.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SliderComponent } from './components/slider/slider.component';
     LandingComponent,
     TemplateComponent,
     PageComponent,
-    SliderComponent
+    SliderComponent,
+    SectionComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
