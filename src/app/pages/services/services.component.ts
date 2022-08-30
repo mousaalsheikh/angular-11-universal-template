@@ -28,7 +28,7 @@ export class ServicesComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.getMetaTags('contact-us');
+    this.getMetaTags('services');
   }
 
   getMetaTags(pageId) {
