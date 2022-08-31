@@ -14,6 +14,8 @@ export class FooterComponent implements OnInit {
 
   lang:string = '';
   isBrowser:boolean;
+  settings:any = {};
+  year:number = 2022;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -31,5 +33,15 @@ export class FooterComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    if(this.isBrowser){
+      this.year = new Date().getFullYear();
+      if(localStorage.settings){
+        this.settings = JSON.parse(localStorage.setting);
+      }
+    }
+    this.service.getSettings().then(resp => { 
+      this.settings = resp.data.settings[0];
+      if(this.isBrowser) localStorage.setting = JSON.stringify(this.settings);
+    });
   }
 }

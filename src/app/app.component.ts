@@ -28,7 +28,16 @@ export class AppComponent {
       }
       if (this.isBrowser) {
         $('body').removeClass('mobile-menu-expanded'); 
-        window.scrollTo(0, 0);      
+        window.scrollTo(0, 0);    
+        $('html, body').animate({
+          scrollTop: 0
+        }, 200);  
+        setTimeout(() => {
+          window.scrollTo(0, 0);    
+          $('html, body').animate({
+            scrollTop: 0
+          }, 200);  
+        }, 100);
       }
     });
     this.router.events.subscribe((url: NavigationEnd) => {

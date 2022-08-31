@@ -47,4 +47,28 @@ export const resx = {
     en: 'Contact us',
     ar: 'إتصل بنا'
   }, 
+  categories:{
+    en: 'Services that meet all your needs',
+    ar: 'خدمات تلبي كل إحتياجاتك'
+  },
+  nav_terms: {
+    en: 'Terms of Service',
+    ar: 'شروط الخدمة'
+  }, 
+  nav_privacy: {
+    en: 'Privacy Policy',
+    ar: 'سياسة الخصوصية'
+  }, 
+  nav_rights: {
+    en: 'Patient Rights & Responsibilities',
+    ar: 'حقوق وواجبات المريض'
+  },  
+  welcome_to_adeed: {
+    en: 'Welcome to ADEED',
+    ar: 'أهلا بك في عضيد'
+  }, 
+  get_in_touch: {
+    en: 'Welcome to ADEED',
+    ar: 'إبقى على تواصل'
+  }, 
 }
