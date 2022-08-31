@@ -14,6 +14,7 @@ export class AppComponent {
 
   lang:string = '';
   isBrowser: boolean = false;
+  os:string = 'server';
 
   constructor(@Inject(PLATFORM_ID) private platformId: any,
     private router: Router, private activatedRoute: ActivatedRoute,
@@ -22,6 +23,10 @@ export class AppComponent {
   }
 
   ngOnInit() {
+    if(this.isBrowser){
+      let userAgent = navigator.userAgent.toLowerCase();
+      this.os = (userAgent.indexOf('ios') == -1 ? 'not-ios' : 'ios');
+    }
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
         return;

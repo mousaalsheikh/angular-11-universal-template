@@ -46,7 +46,7 @@ span.cat-name {
   }
 }
 #promise {
-  background: url(../../../assets/images/promise.jpeg) no-repeat center center fixed;
+  background: url(../../../assets/images/promise.jpeg) no-repeat center center;
   background-size: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -125,7 +125,7 @@ a.about-more {
   margin-top: 15px;
 }
 #feedback {
-  background: url(../../../assets/images/feedback.jpeg) no-repeat center center fixed;
+  background: url(../../../assets/images/feedback.jpeg) no-repeat center center;
   background-size: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;

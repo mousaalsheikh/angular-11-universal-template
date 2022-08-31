@@ -258,3 +258,7 @@ button.toggle-mobile-menu {
   font-family: var(--font-family) !important;
   font-size: 1em !important;
 }
+.os-not-ios #feedback,
+.os-not-ios #promise {
+  background-attachment: fixed !important;
+}
