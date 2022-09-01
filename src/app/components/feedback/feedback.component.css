@@ -1,3 +1,12 @@
+.feedback-headline {
+  color: #fff;
+  /* font-weight: 700; */
+  padding-top: 50px;
+  text-align: center;
+  font-size: 1.7em;
+  border-bottom: solid 1px #665c5c;
+  padding-bottom: 20px;
+}
 .feedback-slide {
   display: flex;
   align-items: center;
@@ -18,12 +27,12 @@
   color: #fff;
 }
 span.feedback-content {
-  font-size: 1.3em;
+  font-size: 1.4em;
   white-space: pre-line;
 }
 .the-client {
   font-size: 1.3em;
   font-weight: 700;
   color: #fff;
-  margin-top: 15px;
+  margin-bottom: 30px;
 }

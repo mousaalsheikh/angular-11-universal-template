@@ -34,12 +34,13 @@
                     <a href="#" routerLink="/{{lang}}/home" class="logo m-l-auto">
                         <img src="../../../assets/images/logo.png" alt="{{utils.alt()}}" />
                     </a>
-                    <div class="web-menu">
+                    <div class="web-menu" *ngIf="!utils.isHome3()">
                         <app-nav [layout]="'desktop-menu'"></app-nav>
                     </div>
-                    <button class="toggle-mobile-menu" (click)="toggleMobileMenu()">
+                    <button class="toggle-mobile-menu"  *ngIf="!utils.isHome3()" (click)="toggleMobileMenu()">
                         <i class="fal fa-bars"></i>
                     </button>
+                    <a href="https://bookings.adeed.com/" class="header-booking" *ngIf="utils.isHome3()">{{utils.getString('nav_booknow')}}</a>
                 </div>                
             </div>
         </div>

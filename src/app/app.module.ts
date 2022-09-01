@@ -28,6 +28,11 @@ import { ServicesComponent } from './pages/services/services.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { PartnersAccrComponent } from './pages/partners/partners.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { CareersComponent } from './pages/careers/careers.component';
+import { NewsComponent } from './pages/news/news.component';
+import { PostComponent } from './pages/post/post.component';
+import { StartComponent } from './pages/start/start.component';
+import { InitComponent } from './pages/init/init.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,12 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     ServicesComponent,
     ContactUsComponent,
     PartnersAccrComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CareersComponent,
+    NewsComponent,
+    PostComponent,
+    StartComponent,
+    InitComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

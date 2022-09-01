@@ -47,6 +47,14 @@ export class Utils {
         }
     }
 
+    isHome3():boolean{   
+        if (this.router.url.indexOf('/en/home-3') != -1 || this.router.url.indexOf('/ar/home-3') != -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     alt():string{
         return 'Adeed - عضيد';
     }

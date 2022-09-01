@@ -1,5 +1,5 @@
 .top-header {
-  background-color: var(--gray-color);
+  background-color: #616c81;
   height: 40px;
   overflow: hidden;
   line-height: 40px;
@@ -91,6 +91,9 @@
     display: none !important;
   }
 }
+header {
+  border-bottom: solid 1px #e8e9f2;
+}
 header .header-wrapper {
   padding: 15px 0;
   display: flex;
@@ -99,4 +102,15 @@ header .header-wrapper {
 header a.logo {
   width: 180px;
   max-width: 40vw;
+}
+header a.header-booking {
+  background-color: var(--accent-color);
+  font-size: 1.1em;
+  color: #fff;
+  padding: 12px 15px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  line-height: 1;
+  text-decoration: none;
+  transition: all 300ms;
 }

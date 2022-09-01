@@ -16,6 +16,9 @@ export class ServicesComponent implements OnInit {
   isBrowser:boolean;
   webPage:any = {};
   htmlContent:any;
+  top = [];
+  main = [];
+  all = [];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -29,6 +32,15 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMetaTags('services');
+    this.getData();
+  }
+
+  getData(){
+    this.service.getHomeCategories().then(resp => {
+      this.top = resp.top;
+      this.main = resp.main;
+      this.all = resp.all;      
+    });
   }
 
   getMetaTags(pageId) {

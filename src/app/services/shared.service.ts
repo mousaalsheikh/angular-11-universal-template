@@ -42,4 +42,12 @@ export class SharedService {
   getBackfack() {
     return this.api.get(`${this.controller}/get-feedback`);
   }
+
+  getFAQ() {
+    return this.api.get(`${this.controller}/get-faq`);
+  }
+
+  sendMessage(msg) {
+    return this.api.post(`${this.controller}/send-message`, msg);
+  }
 }

@@ -1,4 +1,4 @@
-<app-slider [slides]="slides"></app-slider>
+<!-- <app-slider [slides]="slides"></app-slider> -->
 <section id="top-categories" *ngIf="top.length > 0">
     <div class="container">
         <div class="row">
@@ -20,6 +20,25 @@
         </div>
     </div>
 </section>
+<section id="services" *ngIf="all.length > 0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="section-title special-header">{{utils.getString('categories')}}</h3>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let item of all">
+                <a href="javascript:void(0)" class="main-cat">
+                    <span class="all-photo">
+                        <img src="{{utils.getImage(item.CatPhoto, 300, 200)}}" alt="{{utils.alt()}}" />
+                    </span>
+                    <span class="all-name">
+                        {{item['CatName_' + lang]}}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 <section id="promise" [class.hide]="!promiseLoaded">
     <div class="container">
         <div class="row">
@@ -34,7 +53,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="top-special">
-                    <h3 class="section-title special-header">{{utils.getString('why_special')}}</h3>
+                    <h3 class="section-title special-header" style="margin-bottom: 30px;">{{utils.getString('why_special')}}</h3>
                     <div class="special-wrapper">
                         <div class="row">
                             <div class="col-lg-4 col-md-6 col-12" *ngFor="let item of special">
@@ -53,7 +72,7 @@
         </div>
     </div>
 </section>
-<section id="adeed-home" [class.hide]="!whyLoaded">
+ <!-- <section id="adeed-home" [class.hide]="!whyLoaded">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 photo-col">
@@ -65,17 +84,7 @@
             </div>
         </div>
     </div>
-</section>
-<section id="partners" *ngIf="partners.length > 0">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h3 class="section-title special-header">{{utils.getString('accr_part')}}</h3>
-                <app-partners [partners]="partners"></app-partners>
-            </div>
-        </div>
-    </div>
-</section>
+</section>  -->
 <section id="feedback" *ngIf="feedback.length > 0">
     <div class="container">
         <div class="row">
@@ -85,21 +94,12 @@
         </div>
     </div>
 </section>
-<section id="services" *ngIf="all.length > 0">
+<section id="partners" *ngIf="partners.length > 0">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3 class="section-title special-header">{{utils.getString('categories')}}</h3>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-12" *ngFor="let item of all">
-                <a href="javascript:void(0)" class="main-cat">
-                    <span class="all-photo">
-                        <img src="{{utils.getImage(item.CatPhoto, 200, 125)}}" alt="{{utils.alt()}}" />
-                    </span>
-                    <span class="all-name">
-                        {{item['CatName_' + lang]}}
-                    </span>
-                </a>
+                <h3 class="section-title special-header">{{utils.getString('accr_part')}}</h3>
+                <app-partners [partners]="partners"></app-partners>
             </div>
         </div>
     </div>
