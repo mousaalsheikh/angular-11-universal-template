@@ -286,7 +286,9 @@ button.toggle-mobile-menu {
   height: 36px;
 }
 
-@media screen and (min-width:1300px) {
+@navBreakpoint: 1024px;
+
+@media screen and (min-width:@navBreakpoint) {
   .web-menu{
     display: block;
   }
@@ -300,7 +302,7 @@ button.toggle-mobile-menu {
   }
 }
 
-@media screen and (max-width:1300px) {
+@media screen and (max-width:@navBreakpoint) {
   .web-menu{
     display: none;
   }

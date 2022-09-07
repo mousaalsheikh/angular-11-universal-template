@@ -3,23 +3,21 @@
     <div class="row">
         <div class="col-12">
             <div class="web-page-content" *ngIf="webPage.PageContent" [innerHTML]="htmlContent"></div>
-            <div class="top-categories">
-                <div class="top-wrapper srv-tops" *ngIf="top">
-                    <a href="javascript:void(0)" *ngFor="let item of top">
-                        <span class="cat-photo">
-                            <img src="{{utils.getImage(item.Icon, 90, 90)}}" alt="{{utils.alt()}}" />
-                        </span>
-                        <span class="cat-name">
-                            {{item['CatName_' + lang]}}
-                        </span>
-                    </a>
-                </div>                                
-            </div>
             <section id="services" *ngIf="all.length > 0">
                 <div class="container">
                     <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let item of top">
+                            <a href="#" routerLink="/{{lang}}/page/contact-us" class="main-cat">
+                                <span class="all-photo">
+                                    <img src="{{utils.getImage(item.CatPhoto, 300, 200)}}" alt="{{utils.alt()}}" />
+                                </span>
+                                <span class="all-name">
+                                    {{item['CatName_' + lang]}}
+                                </span>
+                            </a>
+                        </div>
                         <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let item of all">
-                            <a href="javascript:void(0)" class="main-cat">
+                            <a href="#" routerLink="/{{lang}}/page/contact-us" class="main-cat">
                                 <span class="all-photo">
                                     <img src="{{utils.getImage(item.CatPhoto, 300, 200)}}" alt="{{utils.alt()}}" />
                                 </span>

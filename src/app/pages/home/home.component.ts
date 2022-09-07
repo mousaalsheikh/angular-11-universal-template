@@ -41,9 +41,9 @@ export class HomeComponent implements OnInit {
   }
 
   getData(){
-    // this.service.getSlider().then(resp => {
-    //   this.slides = resp.data.slides;
-    // });
+    this.service.getSlider().then(resp => {
+      this.slides = resp.data.slides;
+    });
     this.service.getHomeCategories().then(resp => {
       this.top = resp.top;
       this.main = resp.main;
