@@ -3,3 +3,10 @@
   margin-bottom: 30px;
   text-align: center;
 }
+
+.part-sub-title {
+  color: #454647;
+  font-weight: 700;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+}

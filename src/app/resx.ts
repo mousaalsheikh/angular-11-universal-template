@@ -19,6 +19,14 @@ export const resx = {
     en: 'What Make ADEED Special',
     ar: 'ما الذي يجعلنا مميزون'
   },
+  parts: {
+    en: 'Partnerships',
+    ar: 'الشراكات'
+  }, 
+  accr: {
+    en: 'Accreditations',
+    ar: 'الاعتمادات'
+  }, 
   accr_part: {
     en: 'Accreditations & Partnership',
     ar: 'الاعتمادات والشراكات'

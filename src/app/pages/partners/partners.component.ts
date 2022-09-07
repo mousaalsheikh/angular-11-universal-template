@@ -17,6 +17,7 @@ export class PartnersAccrComponent implements OnInit {
   webPage:any = {};
   htmlContent:any;
   partners = [];
+  accrs = [];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -31,7 +32,12 @@ export class PartnersAccrComponent implements OnInit {
   ngOnInit(): void {
     this.getMetaTags('accreditations-and-partnership');
     this.service.getPartners().then(resp => {
-      this.partners = resp.data.partners;
+      this.partners = resp.data.partners.filter(function(el){
+        return el.TheType == 1
+      });
+      this.accrs = resp.data.partners.filter(function(el){
+        return el.TheType == 2
+      });
     });
   }
 
