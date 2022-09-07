@@ -64,8 +64,8 @@ export const resx = {
     ar: 'خدمات تلبي كل إحتياجاتك'
   },
   categories_2:{
-    en: 'Home Medical Services that meet all your needs',
-    ar: 'خدمات طبية منزلية تلبي جميع إحتياجاتك'
+    en: 'Integrated Home Medical Services that meet all your needs',
+    ar: 'خدمات طبية منزلية متكاملة تلبي جميع إحتياجاتك'
   },
   nav_terms: {
     en: 'Terms of Service',
