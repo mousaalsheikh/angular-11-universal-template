@@ -16,6 +16,8 @@ export class NewsComponent implements OnInit {
   isBrowser:boolean;
   webPage:any = {};
   htmlContent:any;
+  item:any = {};
+  news = [];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -33,8 +35,13 @@ export class NewsComponent implements OnInit {
   }
 
   getData(){
-    this.service.getHomeCategories().then(resp => {
-           
+    this.service.getNews().then(resp => {
+      if(resp.data.news.length > 0){
+        this.item = resp.data.news[0];
+        this.news = resp.data.news.filter(function(el){
+          return el.NewsID != resp.data.news[0].NewsID
+        });    
+      }       
     });
   }
 

@@ -50,4 +50,12 @@ export class SharedService {
   sendMessage(msg) {
     return this.api.post(`${this.controller}/send-message`, msg);
   }
+
+  getPost(id) {
+    return this.api.get(`${this.controller}/get-post?id=${id}`);
+  }
+
+  getNews() {
+    return this.api.get(`${this.controller}/get-news`);
+  }
 }

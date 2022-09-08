@@ -1,5 +1,5 @@
 <app-slider [slides]="slides"></app-slider>
-<section id="services" *ngIf="all.length > 0">
+<section id="services" *ngIf="all.length > 0 && settings.ShowSlider">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -28,7 +28,7 @@
         </div>
     </div>
 </section>
-<!-- <section id="promise" [class.hide]="!promiseLoaded">
+<section id="promise" [class.hide]="!promiseLoaded" *ngIf="settings.ShowPromise">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-</section> -->
+</section>
 <section id="adeed-is-special" *ngIf="special.length > 0">
     <div class="container">
         <div class="row">
@@ -74,7 +74,7 @@
         </div>
     </div>
 </section>  -->
-<section id="feedback" *ngIf="feedback.length > 0">
+<section id="feedback" *ngIf="feedback.length > 0 && settings.ShowReviews">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -83,7 +83,7 @@
         </div>
     </div>
 </section>
-<section id="partners" *ngIf="partners.length > 0">
+<section id="partners" *ngIf="partners.length > 0 && settings.ShowPartners">
     <div class="container">
         <div class="row">
             <div class="col-12">

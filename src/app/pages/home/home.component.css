@@ -41,7 +41,7 @@ h3.section-title {
   }
 }
 section#adeed-is-special {
-  padding: 80px 0;
+  padding: 60px 0;
   background-color: #f7f7f7;
 }
 h3.section-title.special-header {
@@ -101,6 +101,8 @@ a.about-more {
 }
 #services {
   padding: 0;
+  margin-top: 35px;
+  margin-bottom: 40px;
 }
 section#promise2 {
   background-color: #f7f7f7;

@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   special = [];
   partners = [];
   feedback = [];
+  settings:any = {};
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -37,7 +38,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMetaTags('home');
-    this.getData();
+    this.service.getSettings().then(resp => { 
+      this.settings = resp.data.settings[0];
+      this.getData();
+    });    
   }
 
   getData(){

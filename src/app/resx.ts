@@ -11,6 +11,10 @@ export const resx = {
     en: 'Learn more',
     ar: 'إعرف المزيد'
   }, 
+  read_more_2: {
+    en: 'Read more',
+    ar: 'إقرأ المزيد'
+  }, 
   what_to_to: {
     en: 'What We Can Do for You!',
     ar: 'كيف ممكن نخدمك!'

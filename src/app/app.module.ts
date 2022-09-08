@@ -33,6 +33,7 @@ import { NewsComponent } from './pages/news/news.component';
 import { PostComponent } from './pages/post/post.component';
 import { StartComponent } from './pages/start/start.component';
 import { InitComponent } from './pages/init/init.component';
+import { NewsItemComponent } from './components/news-item/news-item.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { InitComponent } from './pages/init/init.component';
     NewsComponent,
     PostComponent,
     StartComponent,
-    InitComponent
+    InitComponent,
+    NewsItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
