@@ -11,13 +11,14 @@
 }
 .layout-desktop-menu a.active,
 .layout-desktop-menu a:hover {
-  background-color: var(--accent-color);
-  color: #fff;
+  background-color: var(--green-color);
+  color: var(--primary-color);
 }
 .menu-logo {
   background-color: #fff;
   text-align: center;
   padding: 20px 10px;
+  border-bottom: solid 1px var(--accent-color);
 }
 .menu-logo img {
   width: 80%;
@@ -33,7 +34,15 @@ nav.layout-mobile-menu a {
 }
 nav.layout-mobile-menu.dir-ar a {
   text-align: right;
+  border-right: solid 3px var(--accent-color);
+}
+nav.layout-mobile-menu.dir-ar a.active {
+  border-right: solid 3px #fff;
 }
 nav.layout-mobile-menu.dir-en a {
   text-align: left;
+  border-left: solid 3px var(--accent-color);
+}
+nav.layout-mobile-menu.dir-en a.active {
+  border-left: solid 3px #fff;
 }

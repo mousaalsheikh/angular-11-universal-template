@@ -16,7 +16,7 @@
                                 <div class="slide-title">{{slide.SlideTitle}}</div>
                                 <div class="slide-desc" *ngIf="slide.SlideDesc">{{slide.SlideDesc}}</div>
                                 <div class="slide-link" *ngIf="slide.SlideLink">
-                                    <a href="#" routerLink="/{{lang}}/{{slide.SlideLink}}"><span>{{utils.getString('read_more')}}</span></a>
+                                    <a href="{{slide.SlideLink}}"><span>{{utils.getString('read_more')}}</span></a>
                                 </div>
                             </div>
                         </div>                        

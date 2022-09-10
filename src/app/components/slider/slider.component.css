@@ -87,6 +87,12 @@ img.default-slide {
   line-height: 1;
   padding: 10px;
   box-shadow: 0 0 5px rgba(44, 49, 55, 0.6);
+  text-decoration: none;
+}
+.slide-link a.active,
+.slide-link a:hover {
+  background-color: var(--green-color);
+  color: var(--primary-color);
 }
 .slide-link a span {
   position: relative;

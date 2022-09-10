@@ -99,8 +99,13 @@ img.default-slide {
     border-radius: 5px;
     line-height: 1;
     padding: 10px;
-        box-shadow: 0 0 5px rgba(44, 49, 55 , 0.6);
-
+    box-shadow: 0 0 5px rgba(44, 49, 55 , 0.6);
+    text-decoration: none;
+    
+    &.active, &:hover{        
+        background-color: var(--green-color);
+        color: var(--primary-color);
+    }
 }
 
 .slide-link a span {

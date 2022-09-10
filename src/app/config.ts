@@ -2,7 +2,7 @@ let siteName = 'Adeed - عضيد';
 let baseUrl = 'https://siteapi.adeed.com/';
  
 export const config = {
-  isProduction: false,
+  isProduction: true,
   apiUrl: `${baseUrl}api/`,
   logoUrl: `${baseUrl}logo.png`,
   bookingsApiUrl: 'https://bkngsapi.adeed.com/api/Shared/',
