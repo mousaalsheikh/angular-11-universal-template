@@ -35,6 +35,10 @@ export const resx = {
     en: 'Accreditations & Partnership',
     ar: 'الاعتمادات والشراكات'
   }, 
+  nav_faq:{
+    en: 'Frequently Asked Questions',
+    ar: 'الأسئلة الأكثر شيوعاً'
+  },
   nav_home: {
     en: 'Home',
     ar: 'الرئيسية'

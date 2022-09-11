@@ -4,6 +4,7 @@ import { Utils } from '../../classes/utils';
 import { Meta, Title, DomSanitizer } from '@angular/platform-browser';
 import { SharedService } from '../../services/shared.service';
 import { config } from '../../config';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-page',
@@ -19,6 +20,7 @@ export class PageComponent implements OnInit {
   pageId:string = '';
   htmlContent:any;
   isContact:boolean = false;
+  faqs = [];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -31,6 +33,9 @@ export class PageComponent implements OnInit {
       this.activatedRoute.params.subscribe(params => {
         if(params){
           if (params['id']) this.pageId = params['id'];   
+          if(this.pageId == 'faq'){
+            this.getFAQ();
+          }
           if(this.pageId == 'contact-us' || this.pageId == 'for-corporate') {
             this.getContactInfo();
             this.isContact = true;
@@ -57,6 +62,12 @@ export class PageComponent implements OnInit {
     });
   }
 
+  getFAQ(){
+    this.service.getFAQ().then(data => {
+      this.faqs = data.data.faq;
+    });
+  }
+
   getMetaTags(pageId) {
     this.service.getWebPage(pageId).then(data => {
       if(data.data.page.length > 0){
@@ -77,5 +88,13 @@ export class PageComponent implements OnInit {
         this.pageTitle.setTitle(config.meta.siteName);
       }      
     });     
+  }
+
+  toggleQuestion(i){
+    if(this.isBrowser){
+      let id = `[data-index="${i}"]`;
+      $(id).toggleClass('expanded');
+      $(id).find('.answer').slideToggle(200);
+    }
   }
 }

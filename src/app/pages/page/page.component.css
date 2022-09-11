@@ -16,3 +16,35 @@
   position: relative;
   top: -3px;
 }
+.faq {
+  border-bottom: solid 1px #ddd;
+  margin: 0 auto 20px;
+  padding-bottom: 20px;
+}
+.question {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 0;
+}
+.the-question {
+  font-weight: 700;
+  font-size: 1.3em;
+  color: var(--accent-color);
+}
+.the-arrow {
+  font-size: 1.3em;
+  color: var(--accent-color);
+}
+.answer {
+  font-size: 1.1em;
+  padding-top: 20px;
+  color: var(--gray-color);
+  display: none;
+}
+.the-arrow i {
+  transition: all 400ms;
+}
+.faq.expanded .the-arrow i {
+  transform: rotate(180deg);
+}
