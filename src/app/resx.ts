@@ -39,6 +39,14 @@ export const resx = {
     en: 'Frequently Asked Questions',
     ar: 'الأسئلة الأكثر شيوعاً'
   },
+  for_booking: {
+    en: 'For bookings and inquiries please call',
+    ar: 'للحجوزات والإستفسارات يرجى الإتصال على'
+  }, 
+  our_packages: {
+    en: 'Our home medical services',
+    ar: 'خدماتنا الطبية المنزلية'
+  }, 
   nav_home: {
     en: 'Home',
     ar: 'الرئيسية'
@@ -151,4 +159,8 @@ export const resx = {
     en: 'Thank you for contacting us, we will get back to you shortly',
     ar: 'شكراً لتواصلك معنا, سنقوم بالرد عليك في أقرب وقت ممكن'
   }, 
+  sar:{
+    en: 'SAR',
+    ar: 'ريال'
+  },
 }

@@ -6,7 +6,7 @@
                 <h3 class="section-title special-header">{{utils.getString('categories_2')}}</h3>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let item of top">
-                <a href="#" routerLink="/{{lang}}/page/contact-us" class="main-cat">
+                <a href="#" routerLink="/{{lang}}/category/{{item.CatID}}" class="main-cat">
                     <span class="all-photo">
                         <img src="{{utils.getImage(item.CatPhoto, 300, 200)}}" alt="{{utils.alt()}}" />
                     </span>
@@ -16,7 +16,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let item of all">
-                <a href="#" routerLink="/{{lang}}/page/contact-us" class="main-cat">
+                <a href="#" routerLink="/{{lang}}/category/{{item.CatID}}" class="main-cat">
                     <span class="all-photo">
                         <img src="{{utils.getImage(item.CatPhoto, 300, 200)}}" alt="{{utils.alt()}}" />
                     </span>
