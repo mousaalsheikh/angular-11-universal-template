@@ -57,7 +57,16 @@ export class CategoryComponent implements OnInit {
     this.service.getCategory(this.id).then(resp => {        
       let title:string = (this.lang == 'en' ? 'ADEED Medical Services' : 'عضيد للخدمات الطبية');
       this.item = resp.category[0];
-      let all = resp.packages;
+      let all = [];
+      for(var i = 0; i < resp.packages.length; i++){
+        let pkg = resp.packages[i];
+        let added = all.filter(function(el){
+          return el._Name_en == pkg._Name_en
+        });
+        if(added.length == 0){
+          all.push(pkg);
+        }
+      }
       this.services = all.filter(function(el){
         return el.PackageType != 2
       });
