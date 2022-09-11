@@ -31,6 +31,7 @@ export class FeedbackComponent implements OnInit {
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets',
+          clickable: true
         },
       });   
     }    

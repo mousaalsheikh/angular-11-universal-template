@@ -20,15 +20,29 @@ h3.section-title {
 }
 
 #promise{
-    background: url(../../../assets/images/promise.jpeg) no-repeat center center;        
+    background: url(../../../assets/images/family.jpeg) no-repeat center center;        
     background-size: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     margin-top: 60px;
+    position: relative;
+
+    &:before {
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        background-color: rgba(124, 180, 206, 0.5);
+        position: absolute;
+    }
 
     .adeed-promise {
+        text-shadow: 7px 4px 8px rgba(44, 49, 55,  0.79);
         color: #fff;
         display: flex;
         align-items: center;
