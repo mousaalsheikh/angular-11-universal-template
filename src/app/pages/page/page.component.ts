@@ -97,4 +97,13 @@ export class PageComponent implements OnInit {
       $(id).find('.answer').slideToggle(200);
     }
   }
+
+  tagEvent(eventName){
+    if(this.isBrowser) {
+      window['_addDataLayer']({
+        'event': eventName,
+        'section': this.pageId
+      });
+    }
+  }
 }

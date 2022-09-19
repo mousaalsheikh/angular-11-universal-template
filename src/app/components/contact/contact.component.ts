@@ -64,11 +64,20 @@ export class ContactComponent implements OnInit {
             MessagSubject: '',
             MessageBody: ''        
           };
+          this.tagEvent();
           alert(this.utils.getString('thanks'));
         })        
       }
     } else {
       alert(this.utils.getString('requiredRegistrationFields'));
+    }
+  }
+
+  tagEvent(){
+    if(this.isBrowser) {
+      window['_addDataLayer']({
+        'event': 'send_contact_message'
+      });
     }
   }
 }

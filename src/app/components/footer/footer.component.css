@@ -60,3 +60,19 @@ footer .footer-socials a {
     flex: 0 0 100%;
   }
 }
+.footer-accreditred {
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+}
+.footer-accreditred img {
+  width: 76px;
+}
+.acc-info {
+  flex: 1;
+  padding: 0 10px;
+}
+.jcia {
+  font-weight: 700;
+  font-size: 1.1em;
+}

@@ -23,14 +23,14 @@
             <div class="web-page-content" *ngIf="webPage.PageContent" [innerHTML]="htmlContent"></div>
             <div class="page-contact-info" *ngIf="settings.PhoneNumberToCall">
                 <div>
-                    <a class="call-center" href="tel:{{settings.PhoneNumberToCall}}" target="_blank">
+                    <a class="call-center" href="tel:{{settings.PhoneNumberToCall}}" target="_blank" (click)="tagEvent('call')">
                         <i class="far fa-phone-alt m-l-10" *ngIf="lang == 'en'"></i>
                         <i class="far fa-phone m-l-10" *ngIf="lang == 'ar'"></i>
                         <span class="adeed-call-center">{{settings.PhoneNumberDisplay}}</span>
                     </a>
                 </div>
                 <div>
-                    <a class="email-center" href="mailto:{{settings.EmailAddress}}" target="_blank">
+                    <a class="email-center" href="mailto:{{settings.EmailAddress}}" target="_blank" (click)="tagEvent('send_email')">
                         <i class="far fa-envelope m-l-10"></i>
                         <span>{{settings.EmailAddress}}</span>
                     </a>

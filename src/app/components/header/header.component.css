@@ -1,5 +1,5 @@
 .top-header {
-  background-color: #616c81;
+  background-color: var(--accent-color);
   height: 40px;
   overflow: hidden;
   line-height: 40px;
@@ -83,12 +83,18 @@
     border: none !important;
   }
 }
+.social-phone-call {
+  display: none !important;
+}
 @media screen and (max-width: 450px) {
   .top-header h1.website-title {
     display: none;
   }
   .top-header a.phone-call {
     display: none !important;
+  }
+  .social-phone-call {
+    display: inline-block !important;
   }
 }
 header {

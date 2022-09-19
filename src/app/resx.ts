@@ -73,7 +73,7 @@ export const resx = {
   }, 
   nav_contact: {
     en: 'Contact us',
-    ar: 'إتصل بنا'
+    ar: 'اتصل بنا'
   }, 
   categories:{
     en: 'Services that meet all your needs',

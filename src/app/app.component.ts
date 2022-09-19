@@ -4,6 +4,8 @@ import { ActivatedRoute, Router, NavigationEnd, NavigationStart } from '@angular
 import * as $ from 'jquery';
 import { config } from './config';
 import { Utils } from './classes/utils';
+import { IfStmt } from '@angular/compiler';
+declare let addDataLayer: Function;
 
 @Component({
   selector: 'app-root',
@@ -26,6 +28,10 @@ export class AppComponent {
     if(this.isBrowser){
       let userAgent = navigator.userAgent.toLowerCase();
       this.os = (userAgent.indexOf('ios') == -1 ? 'not-ios' : 'ios');
+      let self = this;
+      window['_addDataLayer'] = function(obj){
+        self._addDataLayer(obj);
+      }
     }
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
@@ -59,5 +65,12 @@ export class AppComponent {
     if(this.isBrowser){
       $('body').removeClass('mobile-menu-expanded');      
     }
+  }
+
+  _addDataLayer(obj){
+    try {
+        if(this.isBrowser) addDataLayer(obj);
+        console.log('event', obj);
+    } catch {}
   }
 }

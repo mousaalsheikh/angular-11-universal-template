@@ -56,4 +56,13 @@ export class HeaderComponent implements OnInit {
       localStorage.lang = (this.lang == 'ar' ? 'en' : 'ar');
     }
   }
+
+  tagEvent(eventName, sectionName){
+    if(this.isBrowser) {
+      window['_addDataLayer']({
+        'event': eventName,
+        'section': sectionName
+      });
+    }
+  }
 }

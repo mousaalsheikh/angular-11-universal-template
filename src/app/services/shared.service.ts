@@ -36,7 +36,7 @@ export class SharedService {
   }
 
   getCategory(id){
-    return this.api.get('', '', config.bookingsApiUrl + `/get-category?id=${id}`);
+    return this.api.get('', '', config.bookingsApiUrl + `/get-category-2?id=${id}`);
   }
 
   getPartners() {
