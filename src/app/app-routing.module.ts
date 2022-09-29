@@ -13,6 +13,7 @@ import { NewsComponent } from './pages/news/news.component';
 import { CareersComponent } from './pages/careers/careers.component';
 import { PostComponent } from './pages/post/post.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { ViewAppointmentsComponent } from './pages/view-appointments/view-appointments.component';
 
 const routes: Routes = [
   //{ path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: ':lang/news', component: NewsComponent },
   { path: ':lang/news/post/:id', component: PostComponent },
   { path: ':lang/careers', component: CareersComponent },
+  { path: 'v-prov-apts: ', component: ViewAppointmentsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

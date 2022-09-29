@@ -35,6 +35,7 @@ import { StartComponent } from './pages/start/start.component';
 import { InitComponent } from './pages/init/init.component';
 import { NewsItemComponent } from './components/news-item/news-item.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { ViewAppointmentsComponent } from './pages/view-appointments/view-appointments.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { CategoryComponent } from './pages/category/category.component';
     StartComponent,
     InitComponent,
     NewsItemComponent,
-    CategoryComponent
+    CategoryComponent,
+    ViewAppointmentsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
