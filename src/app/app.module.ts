@@ -15,56 +15,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './pages/landing/landing.component';
-import { TemplateComponent } from './pages/template/template.component';
-import { PageComponent } from './pages/page/page.component';
-import { SliderComponent } from './components/slider/slider.component';
-import { SectionComponent } from './components/section/section.component';
-import { PartnersComponent } from './components/partners/partners.component';
-import { PageTitleComponent } from './components/page-title/page-title.component';
-import { FeedbackComponent } from './components/feedback/feedback.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { NavComponent } from './components/nav/nav.component';
-import { ServicesComponent } from './pages/services/services.component';
-import { ContactUsComponent } from './pages/contact-us/contact-us.component';
-import { PartnersAccrComponent } from './pages/partners/partners.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { CareersComponent } from './pages/careers/careers.component';
-import { NewsComponent } from './pages/news/news.component';
-import { PostComponent } from './pages/post/post.component';
-import { StartComponent } from './pages/start/start.component';
-import { InitComponent } from './pages/init/init.component';
-import { NewsItemComponent } from './components/news-item/news-item.component';
-import { CategoryComponent } from './pages/category/category.component';
-import { ViewAppointmentsComponent } from './pages/view-appointments/view-appointments.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,   
+    LandingComponent,
+    HomeComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    LandingComponent,
-    TemplateComponent,
-    PageComponent,
-    SliderComponent,
-    SectionComponent,
-    PartnersComponent,
-    PageTitleComponent,
-    FeedbackComponent,
-    ContactComponent,
-    NavComponent,
-    ServicesComponent,
-    ContactUsComponent,
-    PartnersAccrComponent,
-    PageNotFoundComponent,
-    CareersComponent,
-    NewsComponent,
-    PostComponent,
-    StartComponent,
-    InitComponent,
-    NewsItemComponent,
-    CategoryComponent,
-    ViewAppointmentsComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

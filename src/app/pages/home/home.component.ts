@@ -14,17 +14,7 @@ export class HomeComponent implements OnInit {
 
   lang:string = '';
   isBrowser:boolean;
-  webPage:any = {};
-  slides = [];
-  top = [];
-  main = [];
-  all = [];
-  promiseLoaded:boolean = false;
-  whyLoaded:boolean = false;
-  special = [];
-  partners = [];
-  feedback = [];
-  settings:any = {};
+  webPage:any = {};  
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -37,31 +27,11 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.getMetaTags('home');
-    this.service.getSettings().then(resp => { 
-      this.settings = resp.data.settings[0];
-      this.getData();
-    });    
+    //this.getMetaTags('home');      
   }
 
   getData(){
-    this.service.getSlider().then(resp => {
-      this.slides = resp.data.slides;
-    });
-    this.service.getHomeCategories().then(resp => {
-      this.top = resp.top;
-      this.main = resp.main;
-      this.all = resp.all;      
-    });
-    this.service.getSpecial().then(resp => {
-      this.special = resp.data.spacial;
-    });
-    this.service.getPartners().then(resp => {
-      this.partners = resp.data.partners;
-    });
-    this.service.getBackfack().then(resp => {
-      this.feedback = resp.data.feedback;
-    });
+   
   }
 
   getMetaTags(pageId) {

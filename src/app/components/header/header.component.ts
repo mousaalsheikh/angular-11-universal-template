@@ -33,36 +33,19 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    if(this.isBrowser){
-      if(localStorage.settings){
-        this.settings = JSON.parse(localStorage.setting);
-      }
-    }
-    this.service.getSettings().then(resp => { 
-      this.settings = resp.data.settings[0];
-      if(this.isBrowser) localStorage.setting = JSON.stringify(this.settings);
-    });
+   
   }
 
   toggleMobileMenu(){
     if(this.isBrowser){
-      $('body').addClass('mobile-menu-expanded');
-      $('body').addClass('menu-lang-' + this.lang);
+      // $('body').addClass('mobile-menu-expanded');
+      // $('body').addClass('menu-lang-' + this.lang);
     }
   }
 
   changeLanguage(){
     if(this.isBrowser){
       localStorage.lang = (this.lang == 'ar' ? 'en' : 'ar');
-    }
-  }
-
-  tagEvent(eventName, sectionName){
-    if(this.isBrowser) {
-      window['_addDataLayer']({
-        'event': eventName,
-        'section': sectionName
-      });
     }
   }
 }

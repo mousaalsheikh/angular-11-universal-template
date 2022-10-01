@@ -1,17 +1,16 @@
-let siteName = 'Adeed - عضيد';
-let baseUrl = 'https://siteapi.adeed.com/';
+let siteName = 'Mousa Alsheikh';
+let baseUrl = 'https://api';
  
 export const config = {
   isProduction: true,
   apiUrl: `${baseUrl}api/`,
   logoUrl: `${baseUrl}logo.png`,
-  bookingsApiUrl: 'https://bkngsapi.adeed.com/api/Shared/',
-  defaultLanguage: 'ar',
+  defaultLanguage: 'en',
   meta: {
     siteName: siteName,
     og_image: 'assets/images/og-image.jpg',
     og_site_name: `${siteName}`,
     og_type: 'Website',
-    siteUrl: 'https://adeed.com'
+    siteUrl: 'https://mousaalsheikh.com'
   }
 };

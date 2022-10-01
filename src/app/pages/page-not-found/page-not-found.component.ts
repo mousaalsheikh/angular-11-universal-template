@@ -15,7 +15,6 @@ export class PageNotFoundComponent implements OnInit {
   lang:string = '';
   isBrowser:boolean;
   webPage:any = {};
-  htmlContent:any;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -28,7 +27,7 @@ export class PageNotFoundComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.getMetaTags('404');
+    //this.getMetaTags('404');
   }
 
   getMetaTags(pageId) {
@@ -36,7 +35,6 @@ export class PageNotFoundComponent implements OnInit {
       if(data.data.page.length > 0){
         this.webPage = data.data.page[0];        
         this.pageTitle.setTitle(this.webPage.pgTitle);  
-        this.htmlContent = this.sanitizer.bypassSecurityTrustHtml(this.webPage.PageContent);              
          this.metaTagService.addTags([
            { name: 'keywords', content: this.webPage.ggKeywords },
            { name: 'description', content: this.webPage.ggDescription },

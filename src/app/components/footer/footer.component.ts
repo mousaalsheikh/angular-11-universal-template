@@ -34,14 +34,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.isBrowser){
-      this.year = new Date().getFullYear();
-      if(localStorage.settings){
-        this.settings = JSON.parse(localStorage.setting);
-      }
-    }
-    this.service.getSettings().then(resp => { 
-      this.settings = resp.data.settings[0];
-      if(this.isBrowser) localStorage.setting = JSON.stringify(this.settings);
-    });
+      this.year = new Date().getFullYear();      
+    }   
   }
 }

@@ -1,6 +1,0 @@
-<div class="section-title first-title" *ngIf="section['SectionTitle_' + lang]">{{section['SectionTitle_' + lang]}}</div>
-<div class="section-content">
-    <div class="sc-content" *ngIf="lang == 'en'" [innerHTML]="htmlContent_en"></div>
-    <div class="sc-content" *ngIf="lang == 'ar'" [innerHTML]="htmlContent_ar"></div>
-</div>
-<div class="section-title second-title" *ngIf="section['SectionTitle_' + lang]">{{section['SectionTitle_' + lang]}}</div>

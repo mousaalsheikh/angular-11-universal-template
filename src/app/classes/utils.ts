@@ -39,26 +39,6 @@ export class Utils {
         }
     }
 
-    isHome():boolean{   
-        if (this.router.url.indexOf('/en/home') != -1 || this.router.url.indexOf('/ar/home') != -1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    isHome3():boolean{   
-        if (this.router.url.indexOf('/en/home-3') != -1 || this.router.url.indexOf('/ar/home-3') != -1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    alt():string{
-        return 'Adeed - عضيد';
-    }
-
     changeUrl():string{
         let url = this.router.url;
         let lang = this.getLanguage();
@@ -109,7 +89,6 @@ export class Utils {
         if(this.isBrowser()) {
             localStorage.removeItem('user_id');
             localStorage.removeItem('userToken');
-            localStorage.removeItem('IsSeller');
             localStorage.removeItem('ProfilePhoto');
             localStorage.removeItem('FirstName');
             localStorage.removeItem('mode');
@@ -121,7 +100,6 @@ export class Utils {
         if(this.isBrowser()) {
             localStorage.removeItem('user_id');
             localStorage.removeItem('userToken');
-            localStorage.removeItem('IsSeller');
             localStorage.removeItem('ProfilePhoto');
             localStorage.removeItem('FirstName');
             localStorage.removeItem('mode');
@@ -154,7 +132,7 @@ export class Utils {
     }
 
     public getImage(id:string, w = 1024, h = 768): string {        
-        return `https://ucarecdn.com/${id}/-/scale_crop/${w}x${h}/smart/`;
+        return `https://site.com/${id}/-/scale_crop/${w}x${h}/smart/`;
     }
 
     public getLogo(){
@@ -167,30 +145,4 @@ export class Utils {
             return v.toString(16);
         });
     }
-
-    //warning, error, success, info, and question
-    // alert(title, type?, text?){
-    //     if(this.isBrowser()){
-    //         if(!type) type = 'info';
-    //         Swal.fire({
-    //             title: title,
-    //             text: (text ? text : ''),
-    //             confirmButtonText: 'موافق',
-    //             icon: type
-    //         });
-    //     }
-    // }
-
-    // success(title?, text?){
-    //     if(this.isBrowser){
-    //         if(!title) title = 'تم الحفظ بنجاح';
-    //         Swal.fire({
-    //             title: title,
-    //             text: (text ? text : ''),
-    //             confirmButtonText: 'موافق',
-    //             timer: 1500,
-    //             icon: 'success'
-    //         });
-    //     }
-    // }
 }

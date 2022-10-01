@@ -1,52 +1,6 @@
-<div class="top-header dir-{{lang}}">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="top-header-wrapper" *ngIf="settings.PhoneNumberToCall">
-                    <h1 class="website-title m-l-auto">{{utils.getString('site_name')}}</h1>
-                    <div class="top-header-items">
-                        <a class="phone-call" href="tel:{{settings.PhoneNumberToCall}}" target="_blank" (click)="tagEvent('call', 'top header')">
-                            <i class="far fa-phone-alt" *ngIf="lang == 'en'"></i>
-                            <i class="far fa-phone" *ngIf="lang == 'ar'"></i>
-                            <span class="adeed-call-center">{{settings.PhoneNumberDisplay}}</span>
-                        </a>
-                        <a class="phone-call top-email" href="mailto:{{settings.EmailAddress}}" target="_blank" (click)="tagEvent('send_mail', 'top header')">
-                            <i class="far fa-envelope"></i>
-                            <span>{{settings.EmailAddress}}</span>
-                        </a>
-                        <a href="{{settings._Twitter}}" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="{{settings._Instagram}}" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="{{settings._TikTok}}" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a class="social-link social-phone-call" href="tel:{{settings.PhoneNumberToCall}}" target="_blank" (click)="tagEvent('call', 'top header')">
-                            <i class="far fa-phone-alt" *ngIf="lang == 'en'"></i>
-                            <i class="far fa-phone" *ngIf="lang == 'ar'"></i>                            
-                        </a> 
-                        <a href="{{utils.changeUrl()}}" (click)="changeLanguage()" class="lang-link">
-                            {{utils.getString('lang')}}
-                        </a>                                
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+HEADER
+<div>
+    <a href="{{utils.changeUrl()}}" (click)="changeLanguage()" class="lang-link">
+        {{utils.getString('lang')}}
+    </a> 
 </div>
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="header-wrapper">
-                    <a href="#" routerLink="/{{lang}}/home" class="logo m-l-auto">
-                        <img src="../../../assets/images/logo.png" alt="{{utils.alt()}}" />
-                    </a>
-                    <div class="web-menu" *ngIf="!utils.isHome3()">
-                        <app-nav [layout]="'desktop-menu'"></app-nav>
-                    </div>
-                    <button class="toggle-mobile-menu"  *ngIf="!utils.isHome3()" (click)="toggleMobileMenu()">
-                        <i class="fal fa-bars"></i>
-                    </button>
-                    <a href="https://bookings.adeed.com/" class="header-booking" *ngIf="utils.isHome3()">{{utils.getString('nav_booknow')}}</a>
-                </div>                
-            </div>
-        </div>
-    </div>
-</header>

@@ -15,7 +15,6 @@ export class NavComponent implements OnInit {
   @Input('layout') layout:string = '';
   lang:string = '';
   isBrowser:boolean;
-  settings:any = {};
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     public utils: Utils,
@@ -31,14 +30,5 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
     
-  }
-
-  goToPartners(){
-    if(this.isBrowser){
-      $('html, body').animate({
-        scrollTop: $("#partners").offset().top
-      }, 1000);
-      $('body').removeClass('mobile-menu-expanded');      
-    }
   }
 }
