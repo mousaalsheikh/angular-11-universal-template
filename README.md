@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2
 
-## developed by Mousa Alsheikh - 01-Dec-2020
+## developed by Mousa Alsheikh - 02-Oct-2022
 
 www.mousa-alsheikh.com
 
